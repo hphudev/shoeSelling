@@ -232,7 +232,16 @@ a:hover {
   .nav-link {
     font-size: 18px !important;
   }
-  #btn-forward-product {
+  #btn-forward-new-product {
+    visibility: hidden;
+  }
+  #btn-forward-best-product {
+    visibility: hidden;
+  }
+  #btn-back-new-product {
+    visibility: hidden;
+  }
+  #btn-back-best-product {
     visibility: hidden;
   }
 }
