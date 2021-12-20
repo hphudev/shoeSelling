@@ -1,0 +1,296 @@
+/* Get Help */
+.get-help-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.section-list-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.section a {
+    font-size: 16px;
+}
+
+.section h3 {
+    font-size: 18px;
+}
+
+.section,
+.get-help-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.get-help-container {
+    align-items: center;
+    margin-top: 40px;
+}
+
+.seach-input-container {
+    width: 360px;
+    margin-top: 16px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.seach-input-container input#search{
+    width: 360px;
+    height: 50px;
+    background: #fff;
+    font-size: 12pt;
+    float: left;
+    color: #000;
+    padding-left: 45px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.seach-input-container .icon {
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 15px;
+    z-index: 1;
+    color: #4f5b66;
+}
+
+.seach-input-container input#search:hover {
+    border-color: #000;
+}
+
+.seach-input-container input#search:focus,
+.seach-input-container input#search:active{
+    outline: none;
+    border-color: #000;
+    background: #ffffff;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.8;
+}
+
+.section-container {
+    height: max-content;
+    margin-top: 24px;
+    padding: 48px 60px;
+    border: 1px solid #ccc;
+}
+
+.section-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 33.33333%;
+    height: max-content;
+    padding: 0 8px 0 8px;
+    margin: 20px 0;
+}
+
+.first-sec {
+    padding: 0 8px 0 0;
+}
+
+.third-sec {
+    padding: 0 0 0 8px;
+}
+
+.section-detail {
+    color: #000;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.section-detail:hover {
+    opacity: 0.8;
+}
+
+.btn-thumb:hover {
+    fill: var(--main-color);
+}
+/* End Get Help */
+
+/* Feedback Modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    height: fit-content;
+    min-height: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 35%;
+    animation-name: slideDown;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.x-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.x-close:hover,
+.x-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin: 50px 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+
+.dropdown-content p {
+    margin: 0;
+    padding: 13px 16px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.dropdown-content p:hover {
+    background-color: #eee
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-container {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    font-size: 12pt;
+    float: left;
+    color: #000;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.dropdown-container svg {
+    top: 0;
+    right: 0;
+    margin-top: 17px;
+    margin-right: 16px;
+    position: absolute;
+}
+
+.dropdown-container textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 12px;
+    border: aqua;
+    overflow: auto;
+    outline: aqua;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+}
+
+.btn-send-fb {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    width: 100px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 6px;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 2px;
+    float: right;
+}
+
+.btn-send-fb:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.fb-star {
+    margin-right: 12px;
+}
+
+.fb-star:hover {
+    fill: var(--main-color);
+}
+/* End Feedback Modal */
+
+/* Mobile */
+@media (max-width: 46.188rem) {
+    /* Get Help */
+    .section-container {
+        padding: 24px 28px;
+        border: none;
+    }
+  
+    .section-list {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .section {
+        width: 100%;
+        padding: 0 8px 0 0;
+        margin: 12px 0;
+    }
+  
+    .modal-content {
+        width: 80%;
+        max-width: 80%;
+    }
+  
+    .btn-send-fb {
+        margin-top: 40px;
+        margin-bottom: 16px;
+    }
+    /* End Get Help */
+}

@@ -1,0 +1,24 @@
+.map-container {
+  font-size: 16px;
+}
+.store-title:hover {
+  color: #e33b19;
+  text-decoration: none;
+  cursor: pointer;
+}
+.map {
+  height: 800px;
+  overflow-y: scroll;
+}
+.selected {
+  border: 1px solid #000000;
+}
+.text-red {
+  color: #e21717;
+}
+.text-green {
+  color: #1faa59;
+}
+.hidden {
+  display: none;
+}

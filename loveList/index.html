@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>Selling Shoes</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <!-- MDB icon -->
+    <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" /> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="assets/css/mdb.min.css" />
+</head>
+<body>
+    <div class="_app">
+        <!-- BEGIN HEADER -->
+        <div id="_header">
+            <!-- Top bar -->
+            <div class="_topbar">
+                <ul class="_topbar__list">
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-truck"></i>
+                            Tra cứu đơn hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-map-marker-alt"></i>
+                            Tìm cửa hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#" onclick="showLoginModal()">
+                            <i class="_topbar__icon fas fa-user"></i>
+                            Đăng nhập
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="_navbar">
+                <a href="#" class="_navbar__logo-link">
+                    <img src="./assets/images/logo-shoes.png" alt="" class="_navbar__logo">
+                </a>
+                <div class="_navbar__menu-container">
+                    <!-- Menu -->
+                    <ul class="_navbar__list">
+                        <!-- Products -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Sản phẩm
+                            </a>   
+                            <ul class="_navbar__dropdown-menu1">
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/men-shoes.jpg" alt="For Men">
+                                        <div class="_navbar__dropdown1-title">CHO NAM</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/women-shoes.jpg" alt="For Women">
+                                        <div class="_navbar__dropdown1-title">CHO NỮ</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/latest-shoes.jpg" alt="Lastest Products">
+                                        <div class="_navbar__dropdown1-title">MỚI NHẤT</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/best-seller.jpg" alt="Best Seller">
+                                        <div class="_navbar__dropdown1-title">BÁN CHẠY</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- For men -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nam
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- For women -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nữ
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Sale-off -->
+                        <li class="_navbar__item _tablet-hide">
+                            <a class="_navbar__item-link" href="#">
+                                Sale Off
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Số lượng có hạn</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nam</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nữ</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Search -->
+                    <div class="_search">
+                        <div class="_search__input-holder">
+                            <input type="text" class="_search__input" placeholder="Tìm kiếm" />
+                            <button class="_search__search-icon" onclick="searchToggle(this, event);">
+                                <span></span>
+                            </button>
+                        </div>
+                        <span class="_search__close" onclick="searchToggle(this, event);"></span>
+                    </div>
+                    <!-- Favorite & Cart -->
+                    <div class="_navbar__cart-wrapper">
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon far fa-heart"></i>
+                        </a>
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="_mobile-nav">
+                <div class="_mobile-nav__logo">T14 Store</div>
+                <div class="_mobile-nav__menu-button"><span class="fas fa-bars"></span></div>
+                <!-- Favorite & Cart -->
+                <div class="_mobile-nav__link-wrapper">
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon far fa-heart"></i>
+                    </a>
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                
+                <ul>
+                    <li class="_mobile-nav__search">
+                        <input class="_mobile-nav__search-input" type="text" placeholder="Tìm kiếm">
+                        <a href="#" class="_mobile-nav__search-link"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Sản phẩm</a>
+                        <ul>
+                            <li><a href="#">Cho nam</a></li>
+                            <li><a href="#">Cho nữ</a></li>
+                            <li><a href="#">Mới nhất</a></li>
+                            <li><a href="#">Bán chạy</a></li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nam</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nữ</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sale-off</a></li>
+                    <li><a href="#">Tra cứu đơn hàng</a></li>
+                    <li><a href="#">Tìm cửa hàng</a></li>
+                    <li><a href="#">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END HEADER -->
+    
+        <!-- BEGIN BODY -->
+        <!-- Slider -->
+        <div id="_body">
+            <div class="_slider">
+                <div class="_slider__slide">
+                    <p class="_slider__text">FREESHIP CHO ĐƠN HÀNG TỪ 500K</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">GIẢM GIÁ 10% KHI MUA TỪ 2 SẢN PHẨM</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">MIỄN PHÍ ĐỔI TRẢ TRONG VÒNG 20 NGÀY</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">BẢO HÀNH 60 NGÀY - ÁP DỤNG CHO TẤT CẢ SẢN PHẨM</p>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="row" style="margin-top: 20px;">
+                <div class="col" style="text-align: center;">
+                    <h1 style="color: #111; font-weight: 700;">Danh sách yêu thích</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3" style="max-height: fit-content">
+                        <div class="row g-0">
+                          <div class="col-md-2" style="text-align: center;">
+                            <img
+                              src="./assets/images/shoe11.jfif"
+                              alt="Trendy Pants and Shoes"
+                              class="img-fluid rounded-start"
+                              style="max-height: 200px; margin: 20px;"
+                            />
+                          </div>
+                          <div class="col-md-10">
+                            <div class="card-body">
+                             <div class="container">
+                                 <div class="row">
+                                     <div class="col-lg-8">
+                                        <div class="container">
+                                            <div class="row">
+                                                <h5 class="card-title fs-2">Nike Air Max 95</h5>
+                                                <p class="card-text fs-3">
+                                                Midnight Navy/Sail/Armoury Navy/White
+                                                </p>
+                                                <p class="card-text fs-2">
+                                                <small class="text-muted">Giá: 8.799.000 VND</small>
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="btn-group btn-light shadow-0" style="max-width: fit-content;">
+                                                        <div class="container">
+                                                            <div class="row fs-4">
+                                                                Kích thước
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input
+                                                                    type="radio"
+                                                                    class="btn-check"
+                                                                    name="options"
+                                                                    id="option11"
+                                                                    autocomplete="off"
+                                                                    checked
+                                                                    />
+                                                                    <label class="btn btn-warning fs-5" for="option11">31</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option21" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option21">32</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option31" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option31">33</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option41" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option41">34</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option51" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option51">35</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option61" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option61">36</label>
+                                                                    
+                                                                </div>
+                                                            </div>    
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input
+                                                                    type="radio"
+                                                                    class="btn-check"
+                                                                    name="options1"
+                                                                    id="option71"
+                                                                    autocomplete="off"
+                                                                    />
+                                                                    <label class="btn btn-warning fs-5" for="option71">37</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option81" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option81">38</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option91" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option91">39</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option101" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option101">40</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option111" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option111">41</label>
+                                                                    <input type="radio" class="btn-check" name="options1" id="option121" autocomplete="off" checked/>
+                                                                    <label class="btn btn-warning fs-5" for="option121">42</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="container">
+                                                        <div class="row fs-3" style="margin-top: 20px;">
+                                                            Số lượng
+                                                        </div>
+                                                        <div class="row fs-3">
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <button id="btnMinusOne" type="button" class="btn btn-dark btn-floating" style="width: 32px; height: 32px">
+                                                                    <i class="fas fa-minus" style="transform: scale(2);"></i>
+                                                                  </button>
+                                                            </div>
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <div class="form-outline">
+                                                                    <input id="inputNumOne" type="tel" id="typePhone" class="form-control fs-4 border border-dark rounded" disabled style="max-width: 64px; text-align: center; color: #111;" value="2"/>
+                                                                    <!-- <label class="form-label" for="typePhone">Phone number input</label> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <button id="btnAddOne" type="button" class="btn btn-dark btn-floating" style="width: 32px; height: 32px">
+                                                                    <i class="fas fa-plus" style="transform: scale(2);"></i>  
+                                                                  </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="col">
+                                         <div class="container">
+                                            <div class="row">
+                                                <div class="container" style="text-align: center;">
+                                                    <div id="totalOne" class="row fs-1 text-dark fw-bold pt-5">
+                                                        17.598.000 đ
+                                                    </div>
+                                                    <div class="row" style="padding-top: 20px; text-align: center;">
+                                                        <button type="button" class="btn btn-success btn-rounded" style="max-width: fit-content;">Thêm vào giỏ hàng</button>
+                                                    </div>
+                                                    <div class="row" style="padding-top: 20px; text-align: center;">
+                                                        <button type="button" class="btn btn-danger btn-rounded" style="max-width: fit-content;">Xóa sản phẩm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row g-0">
+                          <div class="col-md-2" style="text-align: center;">
+                            <img
+                              src="./assets/images/nike3.jfif"
+                              alt="Trendy Pants and Shoes"
+                              class="img-fluid rounded-start"
+                              style="max-height: 200px; margin: 20px;"
+                            />
+                          </div>
+                          <div class="col-md-10">
+                            <div class="card-body">
+                             <div class="container">
+                                 <div class="row">
+                                     <div class="col-lg-8">
+                                        <div class="container">
+                                            <div class="row">
+                                                <h5 class="card-title fs-2">Nike Air Force 1 '07 LV8</h5>
+                                                <p class="card-text fs-3">
+                                                    Black/Grey Fog/Sail/Chile Red
+                                                </p>
+                                                <p class="card-text fs-2">
+                                                <small class="text-muted">Giá: 2.929.000 VND</small>
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="btn-group btn-light shadow-0" style="max-width: fit-content;">
+                                                        <div class="container">
+                                                            <div class="row fs-4">
+                                                                Kích thước
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input
+                                                                    type="radio"
+                                                                    class="btn-check"
+                                                                    name="options"
+                                                                    id="option1"
+                                                                    autocomplete="off"
+                                                                    checked
+                                                                    />
+                                                                    <label class="btn btn-warning fs-5" for="option1">31</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option2">32</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option3">33</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option4">34</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option5">35</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option6">36</label>
+                                                                    
+                                                                </div>
+                                                            </div>    
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input
+                                                                    type="radio"
+                                                                    class="btn-check"
+                                                                    name="options"
+                                                                    id="option7"
+                                                                    autocomplete="off"
+                                                                    checked
+                                                                    />
+                                                                    <label class="btn btn-warning fs-5" for="option7">37</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option8">38</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option9">39</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option10">40</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option11">41</label>
+                                                                    <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off" />
+                                                                    <label class="btn btn-warning fs-5" for="option12">42</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="container">
+                                                        <div class="row fs-3" style="margin-top: 20px;">
+                                                            Số lượng
+                                                        </div>
+                                                        <div class="row fs-3">
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <button id="btnMinusTwo" type="button" class="btn btn-dark btn-floating" style="width: 32px; height: 32px">
+                                                                    <i class="fas fa-minus" style="transform: scale(2);"></i>
+                                                                  </button>
+                                                            </div>
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <div class="form-outline">
+                                                                    <input id="inputNumTwo" type="tel" id="typePhone" class="form-control fs-4 border border-dark rounded" disabled style="max-width: 64px; text-align: center; color: #111;" value="2"/>
+                                                                    <!-- <label class="form-label" for="typePhone">Phone number input</label> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col" style="max-width: fit-content;">
+                                                                <button id="btnAddTwo" type="button" class="btn btn-dark btn-floating" style="width: 32px; height: 32px">
+                                                                    <i class="fas fa-plus" style="transform: scale(2);"></i>  
+                                                                  </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="col">
+                                         <div class="container">
+                                            <div class="row">
+                                                <div class="container" style="text-align: center;">
+                                                    <div id="totalTwo" class="row fs-1 text-dark fw-bold pt-5">
+                                                        5.858.000 đ
+                                                    </div>
+                                                    <div class="row" style="padding-top: 20px; text-align: center;">
+                                                        <button type="button" class="btn btn-success btn-rounded" style="max-width: fit-content;">Thêm vào giỏ hàng</button>
+                                                    </div>
+                                                    <div class="row" style="padding-top: 20px;">
+                                                        <button type="button" class="btn btn-danger btn-rounded" style="max-width: fit-content;">Xóa sản phẩm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <!-- <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <div class="card" style="width: 100%;">
+                        <ul class="list-group list-group-flush fs-5">
+                            <li class="list-group-item">Lê Hoàng Phú</li>
+                            <li class="list-group-item"><span style="padding: 5px; border: 0.6px solid orangered; background: linear-gradient(0, rgb(231, 66, 0), rgb(188, 201, 14)); border-radius: 20px; color: white;">Home</span> khóm 1, Đồng Tháp, Thành Phố Sa Đéc, Phường 3</li>
+                            <li class="list-group-item">0965676841</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col" style="min-width: 300px;">
+                    <div class="row">
+                        <div class="card" style="width: 100%">
+                            <ul class="list-group list-group-flush fs-5">
+                              <li class="list-group-item fs-2" style="color: #111; font-weight: 700;"> Phiếu thanh toán</li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng tiền (4 sản phẩm)
+                                      </div>
+                                      <div class="col">
+                                          2.600.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col" style="max-width: 200px;">
+                                        <div class="form-outline" style="max-width: 200px;">
+                                            <input type="text" id="form12" class="form-control fs-5" width="max-width: 200px"/>
+                                            <label class="form-label fs-5" for="form12">Mã khuyến mãi</label>
+                                        </div>
+                                      </div>
+                                      <div class="col">
+                                        <button type="button" class="btn btn-primary btn-rounded fs-5">Áp dụng</button>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          25.900 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Giảm phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          -11.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Voucher từ cửa hàng
+                                      </div>
+                                      <div class="col">
+                                          20.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item fs-2">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng cộng
+                                      </div>
+                                      <div class="col">
+                                          2.565.100 đ
+                                      </div>
+                                  </div>
+                                  <div class="row fs-4 pt-3">
+                                    <button type="button" class="btn btn-dark fs-3">Thanh toán</button>
+                                  </div>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="card-group" style="margin-top: 50px; cursor: pointer;">
+                    <div class="card">
+                      <img
+                        src="./assets/images/nike3.jfif"
+                        class="card-img-top"
+                        alt="Hollywood Sign on The Hill"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Nike Air Force 1 '07 LV8</h5>
+                        <p class="card-text h4">
+                            Black/Grey Fog/Sail/Chile Red
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">2.929.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/bitis2.jpg"
+                        class="card-img-top"
+                        alt="Palm Springs Road"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Biti's Hunter Street x VietMax | Bloomin' Central DSMH08400NAU</h5>
+                        <p class="card-text h4">
+                            Brown
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">1.699.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/nike11.jfif"
+                        class="card-img-top"
+                        alt="Los Angeles Skyscrapers"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Zoom Freak 3</h5>
+                        <p class="card-text h4">
+                            Black/Wolf Grey/Pink Blast/Metallic
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">3.669.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="card-group" style="margin-top: 50px; cursor: pointer;">
+                    <div class="card">
+                      <img
+                        src="./assets/images/shoe2.jpg"
+                        class="card-img-top"
+                        alt="Hollywood Sign on The Hill"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Basas Bumper Gum EXT NE - Low Top</h5>
+                        <p class="card-text h4">
+                            Offwhite/Gum
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">650.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/nike2.jfif"
+                        class="card-img-top"
+                        alt="Palm Springs Road"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Nike Air Force 1 '07 QS</h5>
+                        <p class="card-text h4">
+                            Cream II/Sail/Black/Black
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">3.829.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/shoe12.jpg"
+                        class="card-img-top"
+                        alt="Los Angeles Skyscrapers"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Nike Air Zoom Alphafly</h5>
+                        <p class="card-text h4">
+                            White/Jade Aura/Flash Crimson
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">8.059.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    
+        <div id="_footer">
+            <div class="_footer__menu-container">
+                <div class="_footer__column">
+                    <span class="_footer__title">Tiện ích</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Đăng nhập</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tra cứu đơn hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tìm cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Về chúng tôi</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách mua hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách bảo hành</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Trợ giúp</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Câu hỏi thường gặp</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Email góp ý</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Hotline</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Mạng xã hội</span>
+                    <div class="_footer__social">
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-facebook-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-instagram-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-twitter-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-youtube-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="_footer__copyright">
+                <p>Copyright © 2021 Team 14 GTNM. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Login -->
+    <div class="_modal-login">
+        <div class="_modal__login-container">
+            <button class="_modal__close" onclick="hideLoginModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG NHẬP</p>
+            </div>
+            <div class="_modal__body">
+                <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                <button class="_modal__button" onclick="hideLoginModal()">
+                    ĐĂNG NHẬP
+                </button>
+                <a href="#" class="_modal__link">Quên mật khẩu</a>
+            </div>
+            <div class="_login-with">
+                <div class="_login-with__title">ĐĂNG NHẬP VỚI</div>
+                <div class="_login-with__item" onclick="hideLoginModal()">
+                    <i  class="fab fa-facebook-f _login-with__icon"></i>
+                    Facebook
+                </div>
+                <div style="right: 0;" class="_login-with__item" onclick="hideLoginModal()">
+                    <i class="fab fa-google _login-with__icon"></i>
+                    Google
+                </div>
+            </div>
+            <div class="_modal__suggestion">
+                Bạn chưa có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="registerNow()">Đăng ký ngay</a>
+            </div>
+        </div>
+    </div>
+    <!-- Register -->
+    <div class="_modal-register">
+        <div class="_modal__register-container">
+            <button class="_modal__close" onclick="hideRegisterModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG KÝ</p>
+                <div class="_modal__body">
+                    <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                    <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                    <input class="_modal__input" type="password" placeholder="Nhập lại mật khẩu">
+                    <div class="_modal__name-fields">
+                        <input class="_modal__name-input" type="text" placeholder="Họ">
+                        <input class="_modal__name-input" type="text" placeholder="Tên">
+                    </div>
+                    <div class="_modal__gender-section">
+                        <div>
+                            <input type="radio" id="_modal__gender-male" name="_modal__gender">
+                            <label for="_modal__gender-male">Nam</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="_modal__gender-female" name="_modal__gender">
+                            <label for="_modal__gender-female">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="_modal__term">
+                        <input type="checkbox">
+                        Tôi đã đọc và đồng ý với <a href="#">các điều khoản</a> 
+                    </div>
+                    <button class="_modal__button" onclick="hideRegisterModal()">
+                        ĐĂNG KÝ
+                    </button>
+                    <div class="_modal__suggestion">
+                        Bạn đã có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="loginNow()">Đăng nhập ngay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu
+        $(document).ready(function () {
+        // append plus symbol to every list item that has children
+        $('#_mobile-nav ._mobile-nav__parent').append('<span class="_open-menu fa fa-plus"></span>');
+        
+        // fix non-scrolling overflow issue on mobile devices
+        $('#_mobile-nav > ul').wrap('<div class="_overflow"></div>');
+        $(window).on('load resize', function () {
+            var vph = $(window).height() - 57; // 57px - height of #mobile-nav
+            $('._overflow').css('max-height', vph);
+        });
+    
+        // global variables
+        var menu = $('._overflow > ul');
+        var bg = $('html, body');
+        
+        // toggle background scrolling
+        function bgScrolling() {
+            // if menu has toggled class... *
+            if (menu.hasClass('_open')) {
+                // * disable background scrolling
+                bg.css({
+                    'overflow-y': 'hidden',
+                    'height': 'auto'
+                });
+            // if menu does not have toggled class... *
+            } else {
+                // * enable background scrolling
+                bg.css({
+                    'overflow-y': 'visible',
+                    'height': '100%'
+                });
+            }
+        }
+    
+        // menu button click events
+        $('._mobile-nav__menu-button').on('click', function (e) {
+            e.preventDefault();
+            // activate toggles
+            menu.slideToggle(250);
+            menu.toggleClass('_open');
+            $(this).children().toggleClass('fa-bars fa-times');
+            bgScrolling();
+        });
+    
+        // list item click events
+        $('._open-menu').on('click', function (e) {
+            e.preventDefault();
+            $(this).prev('ul').slideToggle(250);
+            $(this).toggleClass('rotate');
+        });
+        });
+        // Search click event
+        function searchToggle(obj, evt) {
+            const container = $(obj).closest('._search');
+            const menu = document.querySelector('._navbar__list');
+            const searchBox = document.querySelector('._search__input');
+
+            if (!container.hasClass('_active')) {
+                container.addClass('_active');
+                evt.preventDefault();
+                menu.style.display = 'none';
+                searchBox.focus();
+            } else 
+            if (container.hasClass('_active') && $(obj).closest('._search__input-holder').length == 0){
+                container.removeClass('_active');
+                // clear input
+                container.find('._search__input').val('');
+                menu.style.display = 'flex';
+            }     
+        }   
+        // Slider event
+        var slideIndex = 0;
+        const slides = document.getElementsByClassName("_slider__slide");
+
+        nextSlide();
+
+        function nextSlide() {
+            slideIndex += 1;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            showSlides(slideIndex);
+            setTimeout(nextSlide, 4000);
+        }
+
+        function showSlides(n) {
+            var i;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }          
+            slides[slideIndex-1].style.display = "block";
+        }
+        // Modals
+        const loginModal =  document.querySelector("._modal-login");
+        const registerModal = document.querySelector("._modal-register");
+
+        const loginModalContainer = document.querySelector("._modal__login-container");
+        const registerModalContainer = document.querySelector("._modal__register-container");
+        
+        function showLoginModal() {
+            loginModal.classList.add('_open-modal');
+        }
+
+        function hideLoginModal() {
+            loginModal.classList.remove('_open-modal');
+        }
+
+        function showRegisterModal() {
+            registerModal.classList.add('_open-modal');
+        }
+
+        function hideRegisterModal() {
+            registerModal.classList.remove('_open-modal');
+        }
+
+        function registerNow() {
+            hideLoginModal();
+            showRegisterModal();
+        }
+
+        function loginNow() {
+            hideRegisterModal();
+            showLoginModal();
+        }
+
+        // Hide modal whenever click outside
+
+        loginModal.addEventListener('click', hideLoginModal);
+        loginModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+        registerModal.addEventListener('click', hideRegisterModal);
+        registerModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+    </script>
+    <!-- MDB -->
+    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        function numberWithCommas(x) {
+            var parts = x.toString().split(".");
+            parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,".");
+            return parts.join(",");
+        }
+
+        var btnMinusOne = document.getElementById("btnMinusOne");
+        btnMinusOne.addEventListener("click", function (param) {
+            if (Number(document.getElementById("inputNumOne").value) > 1)  
+                document.getElementById("inputNumOne").value--;
+            document.getElementById("totalOne").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000) + " đ";
+            // document.getElementById("totalNumPro").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000) + " đ";
+            // document.getElementById("totalNum").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000 + 25900 - 31000) + " đ";
+            
+        })
+        var btnAddOne = document.getElementById("btnAddOne");
+        btnAddOne.addEventListener("click", function (param) {
+            document.getElementById("inputNumOne").value++;
+            document.getElementById("totalOne").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000) + " đ";
+            // document.getElementById("totalNumPro").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000) + " đ";
+            // document.getElementById("totalNum").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000 + 25900 - 31000) + " đ";
+        })
+        var btnMinusTwo = document.getElementById("btnMinusTwo");
+        btnMinusTwo.addEventListener("click", function (param) {
+            if (Number(document.getElementById("inputNumTwo").value) > 1)  
+                document.getElementById("inputNumTwo").value--;
+            document.getElementById("totalTwo").innerHTML = numberWithCommas(document.getElementById("inputNumTwo").value * 8799000) + " đ";
+            // document.getElementById("totalNumPro").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000 + document.getElementById("inputNumTwo").value * 2929000) + " đ";
+            // document.getElementById("totalNum").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000 + 25900 - 31000 + document.getElementById("inputNumTwo").value * 2929000) + " đ";
+            
+        })
+        var btnAddTwo = document.getElementById("btnAddTwo");
+        btnAddTwo.addEventListener("click", function (param) {
+            document.getElementById("inputNumTwo").value++;
+            document.getElementById("totalTwo").innerHTML = numberWithCommas(document.getElementById("inputNumTwo").value * 8799000) + "đ";
+            // document.getElementById("totalNumPro").innerHTML = numberWithCommas(document.getElementById("inputNumTwo").value * 8799000 + document.getElementById("inputNumOne").value * 8799000) + " đ";
+            // document.getElementById("totalNum").innerHTML = numberWithCommas(document.getElementById("inputNumOne").value * 8799000 + 25900 - 31000 + document.getElementById("inputNumOne").value * 8799000) + " đ";
+        })
+    </script>
+</body>
+</html>

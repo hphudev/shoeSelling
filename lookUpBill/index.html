@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>Selling Shoes</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <!-- MDB icon -->
+    <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" /> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="assets/css/mdb.min.css" />
+<!-- Stepper -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+    <!-- JS -->
+    <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body onbeforeunload="beforeReload()" onload="beforeReload()">
+    <div class="_app">
+        <!-- BEGIN HEADER -->
+        <div id="_header">
+            <!-- Top bar -->
+            <div class="_topbar">
+                <ul class="_topbar__list">
+                    <li class="_topbar__item" style="margin-top: 10px;">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-truck"></i>
+                            Tra cứu đơn hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-map-marker-alt"></i>
+                            Tìm cửa hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#" onclick="showLoginModal()">
+                            <i class="_topbar__icon fas fa-user"></i>
+                            Đăng nhập
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="_navbar">
+                <a href="../index.html" class="_navbar__logo-link">
+                    <img src="./assets/images/logo-shoes.png" alt="" class="_navbar__logo">
+                </a>
+                <div class="_navbar__menu-container">
+                    <!-- Menu -->
+                    <ul class="_navbar__list" style="margin-top: 12px">
+                        <!-- Products -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Sản phẩm
+                            </a>   
+                            <ul class="_navbar__dropdown-menu1">
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/men-shoes.jpg" alt="For Men">
+                                        <div class="_navbar__dropdown1-title">CHO NAM</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/women-shoes.jpg" alt="For Women">
+                                        <div class="_navbar__dropdown1-title">CHO NỮ</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/latest-shoes.jpg" alt="Lastest Products">
+                                        <div class="_navbar__dropdown1-title">MỚI NHẤT</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/best-seller.jpg" alt="Best Seller">
+                                        <div class="_navbar__dropdown1-title">BÁN CHẠY</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- For men -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nam
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- For women -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nữ
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Sale-off -->
+                        <li class="_navbar__item _tablet-hide">
+                            <a class="_navbar__item-link" href="#">
+                                Sale Off
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Số lượng có hạn</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nam</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nữ</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Search -->
+                    <div class="_search">
+                        <div class="_search__input-holder">
+                            <input type="text" class="_search__input" placeholder="Tìm kiếm" />
+                            <button class="_search__search-icon" onclick="searchToggle(this, event);">
+                                <span></span>
+                            </button>
+                        </div>
+                        <span class="_search__close" onclick="searchToggle(this, event);"></span>
+                    </div>
+                    <!-- Favorite & Cart -->
+                    <div class="_navbar__cart-wrapper">
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon far fa-heart"></i>
+                        </a>
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="_mobile-nav">
+                <div class="_mobile-nav__logo">T14 Store</div>
+                <div class="_mobile-nav__menu-button"><span class="fas fa-bars"></span></div>
+                <!-- Favorite & Cart -->
+                <div class="_mobile-nav__link-wrapper">
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon far fa-heart"></i>
+                    </a>
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                
+                <ul>
+                    <li class="_mobile-nav__search">
+                        <input class="_mobile-nav__search-input" type="text" placeholder="Tìm kiếm">
+                        <a href="#" class="_mobile-nav__search-link"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Sản phẩm</a>
+                        <ul>
+                            <li><a href="#">Cho nam</a></li>
+                            <li><a href="#">Cho nữ</a></li>
+                            <li><a href="#">Mới nhất</a></li>
+                            <li><a href="#">Bán chạy</a></li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nam</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nữ</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sale-off</a></li>
+                    <li><a href="#">Tra cứu đơn hàng</a></li>
+                    <li><a href="#">Tìm cửa hàng</a></li>
+                    <li onclick="showLoginModal()"><a href="#">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END HEADER -->
+    
+        <!-- BEGIN BODY -->
+        <!-- Slider -->
+        <div id="_body">
+            <div class="_slider">
+                <div class="_slider__slide">
+                    <p class="_slider__text">FREESHIP CHO ĐƠN HÀNG TỪ 500K</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">GIẢM GIÁ 10% KHI MUA TỪ 2 SẢN PHẨM</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">MIỄN PHÍ ĐỔI TRẢ TRONG VÒNG 20 NGÀY</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">BẢO HÀNH 60 NGÀY - ÁP DỤNG CHO TẤT CẢ SẢN PHẨM</p>
+                </div>
+            </div>
+
+        <div class="container" style="padding: 10%; padding-top: 2%;">
+            <div class="row">
+                <div class="col fs-1">
+                    Chi tiết đơn hàng
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                     <div class="card">
+                    <div class="card-header fs-5">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <span style="color: #111; font-weight: 700;">Đơn hàng 319096534950324</span> 
+                                <br>
+                                <span>Đặt ngày 11 thg 11 2021 11:46:09</span> 
+                                <br>
+                                <span style="color: orangered; font-size: 20px; text-shadow: 0 0 10px orange;">T14 Store</span>
+                                <button type="button" class="btn btn-outline-warning fs-5" style="margin-left: 25px; font-weight: 700; margin-top: 5px; margin-bottom: 10px;" data-mdb-ripple-color="dark">
+                                    Trò chuyện ngay
+                                </button>
+                            </div>
+                            <div class="col-md-2" style="text-align: right;">
+                                <h3 class="text-dark" style="width: fit-content; border: #ecf0f7 2px solid; border-radius: 20px; padding: 5px; background-color: #eff0f5; text-shadow: 0 0 25px white;">Đã giao hàng</h3> 
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="card" style="">
+                            <div class="row fs-5" style="background-color: #f4f4f4;">
+                                <div class="col col-md-10">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" style="font-weight: 500; background-color: #f4f4f4;">Đã giao ngày 23 thg 11 2021 | Tiêu chuẩn</li>
+                                        <li class="list-group-item" style="background-color: #f4f4f4">Kiện hàng của bạn đã được giao thành công. Người mua hàng thg 11.23 10:59</li>
+                                    </ul>
+                                </div>
+                                <div class="col col-md-2" style="margin:auto; background-color: #f4f4f4;">
+                                    <button type="button" class="btn btn-light btn-rounded text-light" style="font-size: 10px; font-weight: 700; background-color: #30a2c4"  data-mdb-toggle="modal"
+                                    data-mdb-target="#exampleModal">Chi tiết</button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="row" style="padding-top: 10px;">
+                        <div class="card mb-3" style="height: fit-content;">
+                            <div class="row g-0">
+                              <div class="col-md-2" style="text-align: center;">
+                                <img
+                                  src="./assets//images/shoe2.jpg"
+                                  alt="Trendy Pants and Shoes"
+                                  class="img-fluid rounded-start"
+                                  style="max-height: 100px; padding: 5px"
+                                />
+                              </div>
+                              <div class="col-md-2">
+                                <div class="card-body">
+                                  <h5 class="card-title">Basas Bumper Gum EXT NE - Low Top</h5>
+                                  <p class="card-text">
+                                    Dịch vụ chuyển phát Đại Thành
+                                  </p>
+                                  <p class="card-text">
+                                    <small class="text-muted">Bảo hành 3 tháng</small>
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    đ 650.000
+                                </p>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    S.Lượng: 4
+                                </p>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    <button type="button" class="btn btn-outline-light fs-5" style="color: #30a2c4;" data-mdb-ripple-color="dark">
+                                        Viết đánh giá
+                                    </button>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+                </div>
+                
+                <div class="row">
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col">
+                            <div class="card" style="width: 100%;">
+                                <ul class="list-group list-group-flush fs-5">
+                                    <li class="list-group-item">Lê Hoàng Phú</li>
+                                    <li class="list-group-item"><span style="padding: 5px; border: 0.6px solid orangered; background: linear-gradient(0, rgb(231, 66, 0), rgb(188, 201, 14)); border-radius: 20px; color: white;">Home</span> khóm 1, Đồng Tháp, Thành Phố Sa Đéc, Phường 3</li>
+                                    <li class="list-group-item">0965676841</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="card" style="width: 100%">
+                                    <ul class="list-group list-group-flush fs-5">
+                                      <li class="list-group-item fs-4" style="color: #111; font-weight: 700;">Đơn hàng 319096534950324</li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Tổng tiền (4 sản phẩm)
+                                              </div>
+                                              <div class="col">
+                                                  2.600.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Phí vận chuyển
+                                              </div>
+                                              <div class="col">
+                                                  25.900 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Giảm phí vận chuyển
+                                              </div>
+                                              <div class="col">
+                                                  -11.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Voucher từ cửa hàng
+                                              </div>
+                                              <div class="col">
+                                                  20.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item fs-2">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Tổng cộng
+                                              </div>
+                                              <div class="col">
+                                                  2.565.100 đ
+                                              </div>
+                                          </div>
+                                          <div class="row fs-4">
+                                              <div class="col">
+                                              Thanh toán bằng hình thức Thanh toán khi nhận hàng
+            
+                                              </div>
+                                          </div>
+                                      </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="row" style="margin-top: 10px;">
+                                <div class="card" style="width: 100%">
+                                    <ul class="list-group list-group-flush fs-5">
+                                      <li class="list-group-item fs-4" style="color: #111; font-weight: 700;">Đơn hàng 986575034950324</li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Tổng tiền (2 sản phẩm)
+                                              </div>
+                                              <div class="col">
+                                                  2.318.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Phí vận chuyển
+                                              </div>
+                                              <div class="col">
+                                                  25.900 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Giảm phí vận chuyển
+                                              </div>
+                                              <div class="col">
+                                                  -11.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Voucher từ cửa hàng
+                                              </div>
+                                              <div class="col">
+                                                  50.000 đ
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li class="list-group-item fs-2">
+                                          <div class="row">
+                                              <div class="col">
+                                                  Tổng cộng
+                                              </div>
+                                              <div class="col">
+                                                  2.253.100 đ
+                                              </div>
+                                          </div>
+                                          <div class="row fs-4">
+                                              <div class="col">
+                                                Thanh toán bằng hình thức Thanh toán qua thẻ tín dụng
+                                              </div>
+                                          </div>
+                                      </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <hr>
+            <div class="row" style="margin-top: 25px;">
+                <div class="card">
+                    <div class="card-header fs-5">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <span style="color: #111; font-weight: 700;">Đơn hàng 986575034950324</span> 
+                                <br>
+                                <span>Đặt ngày 15 thg 12 2021 11:46:09</span> 
+                                <br>
+                                <span style="color: orangered; font-size: 20px; text-shadow: 0 0 10px orange;">T14 Store</span>
+                                <button type="button" class="btn btn-outline-warning fs-5" style="margin-left: 25px; font-weight: 700; margin-top: 5px; margin-bottom: 10px;" data-mdb-ripple-color="dark">
+                                    Trò chuyện ngay
+                                </button>
+                            </div>
+                            <div class="col-md-2" style="text-align: right;">
+                                <h3 class="text-dark" style="width: fit-content; border: #ecf0f7 2px solid; border-radius: 20px; padding: 5px; background-color: #eff0f5; text-shadow: 0 0 25px white;">Đã đóng gói</h3> 
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="card" style="">
+                            <div class="row fs-5" style="background-color: #f4f4f4;">
+                                <div class="col col-md-10">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" style="font-weight: 500; background-color: #f4f4f4;">Đã giao ngày 12 thg 12 2021 | Tiêu chuẩn</li>
+                                        <li class="list-group-item" style="background-color: #f4f4f4">Kiện hàng của bạn đã được đóng gói thành công. Người mua hàng thg 12.12 15:00</li>
+                                    </ul>
+                                </div>
+                                <div class="col col-md-2" style="margin:auto; background-color: #f4f4f4;">
+                                    <button type="button" class="btn btn-light btn-rounded text-light" style="font-size: 10px; font-weight: 700; background-color: #30a2c4">Chi tiết</button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="row" style="padding-top: 10px;">
+                        <div class="card mb-3" style="height: fit-content;">
+                            <div class="row g-0">
+                              <div class="col-md-2" style="text-align: center;">
+                                <img
+                                  src="./assets//images/bitis1.jpg"
+                                  alt="Trendy Pants and Shoes"
+                                  class="img-fluid rounded-start"
+                                  style="max-height: 100px; padding: 5px"
+                                />
+                              </div>
+                              <div class="col-md-2">
+                                <div class="card-body">
+                                  <h5 class="card-title">Biti's Hunter X Midnight EZ-STRAP DSMH07600DEN</h5>
+                                  <p class="card-text">
+                                    Dịch vụ chuyển phát Đại Thành
+                                  </p>
+                                  <p class="card-text">
+                                    <small class="text-muted">Bảo hành 3 tháng</small>
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    đ 1.159.000
+                                </p>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    S.Lượng: 2
+                                </p>
+                              </div>
+                              <div class="col-md-2" style="text-align: center; align-items: center; margin: auto;">
+                                <p class="card-text fs-5">
+                                    <button type="button" class="btn btn-outline-light fs-5" style="color: #30a2c4;" data-mdb-ripple-color="dark">
+                                        Viết đánh giá
+                                    </button>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <div class="card" style="width: 100%;">
+                        <ul class="list-group list-group-flush fs-5">
+                            <li class="list-group-item">Lê Hoàng Phú</li>
+                            <li class="list-group-item"><span style="padding: 5px; border: 0.6px solid orangered; background: linear-gradient(0, rgb(231, 66, 0), rgb(188, 201, 14)); border-radius: 20px; color: white;">Home</span> khóm 1, Đồng Tháp, Thành Phố Sa Đéc, Phường 3</li>
+                            <li class="list-group-item">0965676841</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- <div class="row">
+                        <div class="card" style="width: 100%">
+                            <ul class="list-group list-group-flush fs-5">
+                              <li class="list-group-item fs-4" style="color: #111; font-weight: 700;">Đơn hàng 319096534950324</li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng tiền (4 sản phẩm)
+                                      </div>
+                                      <div class="col">
+                                          2.600.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          25.900 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Giảm phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          -11.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Voucher từ cửa hàng
+                                      </div>
+                                      <div class="col">
+                                          20.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item fs-2">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng cộng
+                                      </div>
+                                      <div class="col">
+                                          2.565.100 đ
+                                      </div>
+                                  </div>
+                                  <div class="row fs-4">
+                                      <div class="col">
+                                      Thanh toán bằng hình thức Thanh toán khi nhận hàng
+    
+                                      </div>
+                                  </div>
+                              </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="card" style="width: 100%">
+                            <ul class="list-group list-group-flush fs-5">
+                              <li class="list-group-item fs-4" style="color: #111; font-weight: 700;">Đơn hàng 986575034950324</li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng tiền (2 sản phẩm)
+                                      </div>
+                                      <div class="col">
+                                          2.318.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          25.900 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Giảm phí vận chuyển
+                                      </div>
+                                      <div class="col">
+                                          -11.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="row">
+                                      <div class="col">
+                                          Voucher từ cửa hàng
+                                      </div>
+                                      <div class="col">
+                                          50.000 đ
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item fs-2">
+                                  <div class="row">
+                                      <div class="col">
+                                          Tổng cộng
+                                      </div>
+                                      <div class="col">
+                                          2.253.100 đ
+                                      </div>
+                                  </div>
+                                  <div class="row fs-4">
+                                      <div class="col">
+                                        Thanh toán bằng hình thức Thanh toán qua thẻ tín dụng
+                                      </div>
+                                  </div>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-group" style="margin-top: 50px; cursor: pointer;">
+                    <div class="card">
+                      <img
+                        src="./assets/images/nike3.jfif"
+                        class="card-img-top"
+                        alt="Hollywood Sign on The Hill"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Cream II/Sail/Black/Black</h5>
+                        <p class="card-text h4">
+                            Black/Grey Fog/Sail/Chile Red
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">2.929.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/bitis2.jpg"
+                        class="card-img-top"
+                        alt="Palm Springs Road"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Biti's Hunter Street x VietMax | Bloomin' Central DSMH08400NAU</h5>
+                        <p class="card-text h4">
+                            Brown
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">1.699.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img
+                        src="./assets/images/nike11.jfif"
+                        class="card-img-top"
+                        alt="Los Angeles Skyscrapers"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title h1">Zoom Freak 3</h5>
+                        <p class="card-text h4">
+                            Black/Wolf Grey/Pink Blast/Metallic
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted fs-5">3.669.000 VND</small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="row">
+                <!-- Modal -->
+                <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+                >
+                <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel" style="color: #111;">Đơn hàng 319096534950324</h3>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-mdb-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-md">
+                            <div class="row">
+                                <ul class="stepper linear">
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Hoàn tất đóng gói (12/11 19:55)</div>
+                                        <div class="step-content">
+                                            Kiện hàng của bạn đã hoàn tất đóng gói và sẵn sàng bàn giao cho đơn vị vận chuyển
+                                           <div class="step-actions">
+                                            
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Đã đến trung tâm trung chuyển (16/11 15:52)</div>
+                                        <div class="step-content">
+                                            Kiện hàng của bạn đã đến trung tâm trung chuyển tại China
+                                           <div class="step-actions">
+                                            16/11 15:52
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Đã rời khỏi trung tâm trung chuyển (17/11 01:03)</div>
+                                        <div class="step-content">
+                                            Departed from Logistics Facility
+                                           <div class="step-actions">
+                                            17/11 00:06
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Đang thực hiện thủ tục hải quan (17/11 01:03)</div>
+                                        <div class="step-content">
+                                            Kiện hàng của bạn đang làm thủ tục xuất khẩu, đang chờ chuyển đến Vietnam
+                                           <div class="step-actions">
+                                            
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Trên đường đến Việt Nam (19/11 08:05)</div>
+                                        <div class="step-content">
+                                            Kiện hàng của bạn đang trên đường đến Vietnam
+                                           <div class="step-actions">
+                                            
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step fs-4">
+                                        <div class="step-title waves-effect">Đã đến Việt Nam (19/11 23:00)</div>
+                                        <div class="step-content">
+                                            Kiện hàng của bạn đã đến Việt Nam
+                                           <div class="step-actions">
+                                            
+                                           </div>
+                                        </div>
+                                     </li>
+                                    <li class="step active fs-4">
+                                        <div class="step-title waves-effect">Thủ tục hải quan hoàn tất (20/11 05:00)</div>
+                                        <div class="step-content">
+                                            Thủ tục hải quan hoàn tất
+                                           <div class="step-actions">
+                                            
+                                           </div>
+                                        </div>
+                                     </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+                        Đóng
+                    </button>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="_footer">
+            <div class="_footer__menu-container">
+                <div class="_footer__column">
+                    <span class="_footer__title">Tiện ích</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Đăng nhập</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tra cứu đơn hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tìm cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Về chúng tôi</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách mua hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách bảo hành</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Trợ giúp</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Câu hỏi thường gặp</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Email góp ý</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Hotline</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Mạng xã hội</span>
+                    <div class="_footer__social">
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-facebook-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-instagram-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-twitter-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-youtube-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="_footer__copyright">
+                <p>Copyright © 2021 Team 14 GTNM. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Login -->
+    <div class="_modal-login">
+        <div class="_modal__login-container">
+            <button class="_modal__close" onclick="hideLoginModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG NHẬP</p>
+            </div>
+            <div class="_modal__body">
+                <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                <button class="_modal__button" onclick="hideLoginModal()">
+                    ĐĂNG NHẬP
+                </button>
+                <a href="#" class="_modal__link">Quên mật khẩu</a>
+            </div>
+            <div class="_login-with">
+                <div class="_login-with__title">ĐĂNG NHẬP VỚI</div>
+                <div class="_login-with__item" onclick="hideLoginModal()">
+                    <i  class="fab fa-facebook-f _login-with__icon"></i>
+                    Facebook
+                </div>
+                <div style="right: 0;" class="_login-with__item" onclick="hideLoginModal()">
+                    <i class="fab fa-google _login-with__icon"></i>
+                    Google
+                </div>
+            </div>
+            <div class="_modal__suggestion">
+                Bạn chưa có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="registerNow()">Đăng ký ngay</a>
+            </div>
+        </div>
+    </div>
+    <!-- Register -->
+    <div class="_modal-register">
+        <div class="_modal__register-container">
+            <button class="_modal__close" onclick="hideRegisterModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG KÝ</p>
+                <div class="_modal__body">
+                    <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                    <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                    <input class="_modal__input" type="password" placeholder="Nhập lại mật khẩu">
+                    <div class="_modal__name-fields">
+                        <input class="_modal__name-input" type="text" placeholder="Họ">
+                        <input class="_modal__name-input" type="text" placeholder="Tên">
+                    </div>
+                    <div class="_modal__gender-section">
+                        <div>
+                            <input type="radio" id="_modal__gender-male" name="_modal__gender">
+                            <label for="_modal__gender-male">Nam</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="_modal__gender-female" name="_modal__gender">
+                            <label for="_modal__gender-female">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="_modal__term">
+                        <input type="checkbox">
+                        Tôi đã đọc và đồng ý với <a href="#">các điều khoản</a> 
+                    </div>
+                    <button class="_modal__button" onclick="hideRegisterModal()">
+                        ĐĂNG KÝ
+                    </button>
+                    <div class="_modal__suggestion">
+                        Bạn đã có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="loginNow()">Đăng nhập ngay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu
+        $(document).ready(function () {
+        // append plus symbol to every list item that has children
+        $('#_mobile-nav ._mobile-nav__parent').append('<span class="_open-menu fa fa-plus"></span>');
+        
+        // fix non-scrolling overflow issue on mobile devices
+        $('#_mobile-nav > ul').wrap('<div class="_overflow"></div>');
+        $(window).on('load resize', function () {
+            var vph = $(window).height() - 57; // 57px - height of #mobile-nav
+            $('._overflow').css('max-height', vph);
+        });
+    
+        // global variables
+        var menu = $('._overflow > ul');
+        var bg = $('html, body');
+        
+        // toggle background scrolling
+        function bgScrolling() {
+            // if menu has toggled class... *
+            if (menu.hasClass('_open')) {
+                // * disable background scrolling
+                bg.css({
+                    'overflow-y': 'hidden',
+                    'height': 'auto'
+                });
+            // if menu does not have toggled class... *
+            } else {
+                // * enable background scrolling
+                bg.css({
+                    'overflow-y': 'visible',
+                    'height': '100%'
+                });
+            }
+        }
+    
+        // menu button click events
+        $('._mobile-nav__menu-button').on('click', function (e) {
+            e.preventDefault();
+            // activate toggles
+            menu.slideToggle(250);
+            menu.toggleClass('_open');
+            $(this).children().toggleClass('fa-bars fa-times');
+            bgScrolling();
+        });
+    
+        // list item click events
+        $('._open-menu').on('click', function (e) {
+            e.preventDefault();
+            $(this).prev('ul').slideToggle(250);
+            $(this).toggleClass('rotate');
+        });
+        });
+        // Search click event
+        function searchToggle(obj, evt) {
+            const container = $(obj).closest('._search');
+            const menu = document.querySelector('._navbar__list');
+            const searchBox = document.querySelector('._search__input');
+
+            if (!container.hasClass('_active')) {
+                container.addClass('_active');
+                evt.preventDefault();
+                menu.style.display = 'none';
+                searchBox.focus();
+            } else 
+            if (container.hasClass('_active') && $(obj).closest('._search__input-holder').length == 0){
+                container.removeClass('_active');
+                // clear input
+                container.find('._search__input').val('');
+                menu.style.display = 'flex';
+            }     
+        }   
+        // Slider event
+        var slideIndex = 0;
+        const slides = document.getElementsByClassName("_slider__slide");
+
+        nextSlide();
+
+        function nextSlide() {
+            slideIndex += 1;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            showSlides(slideIndex);
+            setTimeout(nextSlide, 4000);
+        }
+
+        function showSlides(n) {
+            var i;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }          
+            slides[slideIndex-1].style.display = "block";
+        }
+        // Modals
+        const loginModal =  document.querySelector("._modal-login");
+        const registerModal = document.querySelector("._modal-register");
+
+        const loginModalContainer = document.querySelector("._modal__login-container");
+        const registerModalContainer = document.querySelector("._modal__register-container");
+        
+        function showLoginModal() {
+            loginModal.classList.add('_open-modal');
+        }
+
+        function hideLoginModal() {
+            loginModal.classList.remove('_open-modal');
+        }
+
+        function showRegisterModal() {
+            registerModal.classList.add('_open-modal');
+        }
+
+        function hideRegisterModal() {
+            registerModal.classList.remove('_open-modal');
+        }
+
+        function registerNow() {
+            hideLoginModal();
+            showRegisterModal();
+        }
+
+        function loginNow() {
+            hideRegisterModal();
+            showLoginModal();
+        }
+
+        // Hide modal whenever click outside
+
+        loginModal.addEventListener('click', hideLoginModal);
+        loginModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+        registerModal.addEventListener('click', hideRegisterModal);
+        registerModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+    </script>
+    <!-- MDB -->
+    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <script type='text/javascript'>
+        // <![CDATA[
+            var btnHearths = document.getElementsByClassName("btnHearth");
+            for (let i = 0; i < btnHearths.length; i++)
+            {
+                btnHearths[i].addEventListener("click", function (param) {  
+                    
+                })
+            }
+            !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+        // /]]>
+    </script>
+    <script type="text/javascript">
+        function beforeReload() {  
+            Swal.fire({
+                   timer: 700,
+                   width: "100px",
+                   background: "#000",
+                });
+            Swal.showLoading();
+        }
+    </script>
+</body>
+</html>

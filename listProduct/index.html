@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/src/ihover.css">
+    <link rel="stylesheet" href="./assets/src/ihover.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-5.15.4-web/css/all.css">
+    <title>Selling Shoes</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <!-- Hoàng Phú -->
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="./assets/fontawesome-free-5.15.4-web/js/all.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        @media only screen and (min-width: 300px) {
+            .productCard{
+                width: 229px;
+                margin: 2px
+            }
+            body{
+                padding: 0px;
+                margin: auto;
+                overflow-x: hidden;
+            }
+            .frameList{
+                padding: 5%;
+                display: none;
+                position: absolute;
+                top: 220px;
+                background-color: white;
+                z-index: 500;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+            .frameProduct{
+                /* padding: 15px; */
+                display: flex;
+                padding-top: 5%;
+                justify-content: center;
+                /* flex: row; */
+                flex-direction: column;
+            }
+            .rowProduct{
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                /* flex: row; */
+                flex-direction: row;
+            }
+            #btnFilter{
+                display: block;
+                z-index: 500;
+                margin-left: 5%;
+            }
+        }
+        @media only screen and (min-width: 1000px) {
+            .productCard{
+                width: 300px
+            }
+            .frameList{
+                padding: 2%;
+                display:block;
+                position:relative;
+                top: 50px;
+                /* min-width: 1000px; */
+                margin-top: 15%;
+                z-index: 0;
+                max-height: fit-content;
+                overflow-y: none;
+            }
+            .frameProduct{
+                padding-right: 5%;
+                padding-top: 5%;
+            }
+            .rowProduct{
+                margin: auto;
+            }
+        }
+        @media only screen and (min-width: 1300px) {
+            .productCard{
+                width: 300px
+            }
+            .frameList{
+                /* padding: 5%; */
+                display:block;
+                padding-top: 0;
+                position: relative;     
+                margin-top: 0;
+                /* z-index: 999; */
+                max-height: fit-content;
+                overflow-y: none;
+            }
+            .frameProduct{
+                padding-right: 5%;
+                padding-top: 2.5%;
+            }
+            .rowProduct{
+                margin: auto;
+            }
+            #btnFilter{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body onbeforeunload="beforeReload()" onload="beforeReload()">
+    <div class="_app">
+        <!-- BEGIN HEADER -->
+        <div id="_header">
+            <!-- Top bar -->
+            <div class="_topbar">
+                <ul class="_topbar__list">
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-truck"></i>
+                            Tra cứu đơn hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#">
+                            <i class="_topbar__icon fas fa-map-marker-alt"></i>
+                            Tìm cửa hàng
+                        </a>
+                    </li>
+                    <li class="_topbar__item">
+                        <a class="_topbar__item-link" href="#" onclick="showLoginModal()">
+                            <i class="_topbar__icon fas fa-user"></i>
+                            Đăng nhập
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="_navbar">
+                <a href="../index.html" class="_navbar__logo-link">
+                    <img src="./assets/images/logo-shoes.png" alt="" class="_navbar__logo">
+                </a>
+                <div class="_navbar__menu-container">
+                    <!-- Menu -->
+                    <ul class="_navbar__list">
+                        <!-- Products -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Sản phẩm
+                            </a>   
+                            <ul class="_navbar__dropdown-menu1">
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/men-shoes.jpg" alt="For Men">
+                                        <div class="_navbar__dropdown1-title">CHO NAM</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/women-shoes.jpg" alt="For Women">
+                                        <div class="_navbar__dropdown1-title">CHO NỮ</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/latest-shoes.jpg" alt="Lastest Products">
+                                        <div class="_navbar__dropdown1-title">MỚI NHẤT</div>
+                                    </a>
+                                </li>
+                                <li class="_navbar__dropdown-item1">
+                                    <a class="_navbar__dropdown-link1" href="#">
+                                        <img class="_navbar__dropdown-img" src="./assets/images/best-seller.jpg" alt="Best Seller">
+                                        <div class="_navbar__dropdown1-title">BÁN CHẠY</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- For men -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nam
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- For women -->
+                        <li class="_navbar__item">
+                            <a class="_navbar__item-link" href="#">
+                                Cho nữ
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Mới nhất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bán chạy</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giày</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Thể thao</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Thường ngày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Chạy bộ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Bóng rổ</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tennis</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đá bóng</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Lướt ván</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Sandals</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Phụ kiện</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Đang giảm giá</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Vòng tay</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Mắt kính</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Tất</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nón</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Dây giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balo</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Túi</a></li> 
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Sale-off -->
+                        <li class="_navbar__item _tablet-hide">
+                            <a class="_navbar__item-link" href="#">
+                                Sale Off
+                            </a>
+                            <div class="_navbar__dropdown-menu2">
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Nổi bật</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Số lượng có hạn</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nam</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Giảm giá cho nữ</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Tất cả</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Giày</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Phụ kiện</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="_navbar__dropdown-column">
+                                    <span class="_navbar__dropdown-column-title">Thương hiệu</span>
+                                    <ul class="_navbar__column-list">
+                                        <li><a href="#" class="_navbar__column-item-link">Adidas</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Nike</a></li>             
+                                        <li><a href="#" class="_navbar__column-item-link">Converse</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Puma</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Vans</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Balenciaga</a></li>
+                                        <li><a href="#" class="_navbar__column-item-link">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Search -->
+                    <div class="_search">
+                        <div class="_search__input-holder">
+                            <input type="text" class="_search__input" placeholder="Tìm kiếm" />
+                            <button class="_search__search-icon" onclick="searchToggle(this, event);">
+                                <span></span>
+                            </button>
+                        </div>
+                        <span class="_search__close" onclick="searchToggle(this, event);"></span>
+                    </div>
+                    <!-- Favorite & Cart -->
+                    <div class="_navbar__cart-wrapper">
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon far fa-heart"></i>
+                        </a>
+                        <a href="#" class="_navbar__cart-link">
+                            <i class="_navbar__cart-icon fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="_mobile-nav">
+                <div class="_mobile-nav__logo">T14 Store</div>
+                <div class="_mobile-nav__menu-button"><span class="fas fa-bars"></span></div>
+                <!-- Favorite & Cart -->
+                <div class="_mobile-nav__link-wrapper">
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon far fa-heart"></i>
+                    </a>
+                    <a href="#" class="_mobile-nav__link">
+                        <i class="_mobile-nav__icon fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                
+                <ul>
+                    <li class="_mobile-nav__search">
+                        <input class="_mobile-nav__search-input" type="text" placeholder="Tìm kiếm">
+                        <a href="#" class="_mobile-nav__search-link"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Sản phẩm</a>
+                        <ul>
+                            <li><a href="#">Cho nam</a></li>
+                            <li><a href="#">Cho nữ</a></li>
+                            <li><a href="#">Mới nhất</a></li>
+                            <li><a href="#">Bán chạy</a></li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nam</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="_mobile-nav__parent">
+                        <a href="#">Cho nữ</a>
+                        <ul>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Giày</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Thể thao</a></li>
+                                    <li><a href="#">Thường ngày</a></li>
+                                    <li><a href="#">Chạy bộ</a></li>
+                                    <li><a href="#">Bóng rổ</a></li>
+                                    <li><a href="#">Tennis</a></li>
+                                    <li><a href="#">Đá bóng</a></li>
+                                    <li><a href="#">Lướt ván</a></li>
+                                    <li><a href="#">Sandals</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Phụ kiện</a>
+                                <ul>
+                                    <li><a href="#">Đang giảm giá</a></li>
+                                    <li><a href="#">Mắt kính</a></li>
+                                    <li><a href="#">Vòng tay</a></li>
+                                    <li><a href="#">Tất</a></li>
+                                    <li><a href="#">Nón</a></li>
+                                    <li><a href="#">Dây giày</a></li>
+                                    <li><a href="#">Balo</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                </ul>
+                            </li>
+                            <li class="_mobile-nav__parent">
+                                <a href="#">Thương hiệu</a>
+                                <ul>
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Converse</a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">Vans</a></li>
+                                    <li><a href="#">Balenciaga</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sale-off</a></li>
+                    <li><a href="#">Tra cứu đơn hàng</a></li>
+                    <li><a href="#">Tìm cửa hàng</a></li>
+                    <li><a href="#">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END HEADER -->
+    
+        <!-- BEGIN BODY -->
+        <!-- Slider -->
+        <div id="_body">
+            <div class="_slider">
+                <div class="_slider__slide">
+                    <p class="_slider__text">FREESHIP CHO ĐƠN HÀNG TỪ 500K</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">GIẢM GIÁ 10% KHI MUA TỪ 2 SẢN PHẨM</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">MIỄN PHÍ ĐỔI TRẢ TRONG VÒNG 20 NGÀY</p>
+                </div>
+                <div class="_slider__slide">
+                    <p class="_slider__text">BẢO HÀNH 60 NGÀY - ÁP DỤNG CHO TẤT CẢ SẢN PHẨM</p>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 0;">
+                <div class="row" style="padding-left: 5%; padding-top: 2.5%;">
+                    <button id="btnFilter" class="btn btn-dark me-md-2 fs-2 text-warning" style="max-width: 64px; height: auto;" type="button">
+                        <i class="fas fa-sort-amount-down"></i>
+                    </button>
+                </div>
+                
+                <div id="frameFilter" style="padding-top: 0; transition: all 0.5s ease;" class="col-md-4 frameList">
+                    <div class="row">
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                            <label class="btn btn-outline-dark fs-3" for="btnradio1" style="font-weight: 700;">TẤT CẢ</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                            <label class="btn btn-outline-dark fs-3" for="btnradio2" style="font-weight: 700;">NAM</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                            <label class="btn btn-outline-dark fs-3" for="btnradio3" style="font-weight: 700;">NỮ</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck1" autocomplete="off">
+                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck1_label" style="text-align: left;" for="btncheck1">Giày
+                                <!-- <span aria-hidden="true" style="padding-left: 50%;">&times;</span> -->
+                            </label>
+                            
+                            <!-- <input type="checkbox" class="btn-check checkbox__type" id="btncheck2" autocomplete="off">
+                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck2_label" style="text-align: left; max-width: 330px;" for="btncheck2">Nửa trên</label> -->
+                          
+                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck3" autocomplete="off">
+                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck3_label" style="text-align: left;" for="btncheck3">Phụ kiện</label>
+                        </div>
+                    </div>
+                    <hr>  
+                    <div>
+                    </div>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    TRẠNG THÁI
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck4" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck4_label" style="text-align: left;" for="btncheck4">Phiên bản giới hạn</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck5" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck5_label" style="text-align: left;" for="btncheck5">Chỉ bán online</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck6" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck6_label" style="text-align: left;" for="btncheck6">Phụ kiện</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck7" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck7_label" style="text-align: left;" for="btncheck7">Giảm giá</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck8" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck8_label" style="text-align: left;" for="btncheck8">Bán chạy nhất</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck9" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck9_label" style="text-align: left;" for="btncheck9">Giảm giá</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                    KIỂU DÁNG
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck10" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck10_label" style="text-align: left;" for="btncheck10">Cổ thấp</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck11" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck11_label" style="text-align: left;" for="btncheck11">Cố cao</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck12" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck12_label" style="text-align: left;" for="btncheck12">Không dây</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck13" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck13_label" style="text-align: left;" for="btncheck13">Không gót</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    DÒNG SẢN PHẨM
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck14" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck14_label" style="text-align: left;" for="btncheck14">Basas</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck15" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck15_label" style="text-align: left;" for="btncheck15">Nike</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck16" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck16_label" style="text-align: left;" for="btncheck16">Biti's</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck17" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck13_label" style="text-align: left;" for="btncheck17">Puma</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck17" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck13_label" style="text-align: left;" for="btncheck17">Khác</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                <button class="accordion-button collapsed fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                    GIÁ
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingfour">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck18" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck18_label" style="text-align: left;" for="btncheck18">>600k </label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck19" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck19_label" style="text-align: left;" for="btncheck19">500k-599k</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck20" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck20_label" style="text-align: left;" for="btncheck20">400k-499k</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck21" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck21_label" style="text-align: left;" for="btncheck21">300k-399k</label>
+
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck22" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck22_label" style="text-align: left;" for="btncheck22">200k-299k</label>
+
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck23" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck23_label" style="text-align: left;" for="btncheck23">&lt;200k</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                                <button class="accordion-button collapsed fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                                    BỘ SƯU TẬP
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingfive">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group btn-group-vertical" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck29" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck29_label" style="text-align: left;" for="btncheck29"> Suade </label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck24" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck24_label" style="text-align: left;" for="btncheck24">Temperate</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck25" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck25_label" style="text-align: left;" for="btncheck25">Ananas x Doraemon 50 Years</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck26" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck26_label" style="text-align: left;" for="btncheck26">Irrelevant</label>
+
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck27" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck27_label" style="text-align: left;" for="btncheck27">Track 6 Unnamed</label>
+
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck28" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type" id="btncheck28_label" style="text-align: left;" for="btncheck28">DiscoverYou</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="box-shadow: none; border-width: 0;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                                <button class="accordion-button collapsed fs-3 text-dark" style="font-weight: 700;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                                    SIZE SẢN PHẨM KHÁC
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingSix">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck30" autocomplete="off" style="border: 1px solid rgb(92, 92, 92)">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type border-warning" id="btncheck30_label" style="text-align: center ; margin-right: 5px;" for="btncheck30">Free</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type border-warning" id="btncheck31" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type border-warning" id="btncheck31_label" style="text-align: center; margin-right: 5px;" for="btncheck31">S</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck32" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type border-warning" id="btncheck32_label" style="text-align: center; margin-right: 5px;" for="btncheck32">M</label>
+                                            
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck33" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type border-warning" id="btncheck33_label" style="text-align: center; margin-right: 5px;" for="btncheck33">L</label>
+
+                                            <input type="checkbox" class="btn-check checkbox__type" id="btncheck34" autocomplete="off">
+                                            <label class="btn btn-outline-light fs-3 text-dark checkbox__label-type border-warning" id="btncheck34_label" style="text-align: center; margin-right: 5px;" for="btncheck34">XL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="listProduct" class="col-lg-8 frameProduct">
+                    <div class="row">
+                        <img src="./assets/images/background.jpg" style="border-radius: 5px; width: 100%; max-height: 500px; object-fit: fill; padding-left: 30px; padding-right: 30px;" alt="">
+                    </div>
+                    <!-- <section class="section"> -->
+                        <div class="row pt-5 rowProduct" style="width: 100%;">
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/nike.jfif" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Nike Air Force 1 '07
+                                                    <br>
+                                                    White/White
+                                                </p>
+                                                
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Bán chạy nhất</h5>
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Nike Air Force 1 '07p</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">White/White</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">2.649.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style=" text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/shoe2.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Basas Bumper Gum EXT NE - High Top
+                                                    <br>
+                                                    Offwhite/Gum
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Sản phẩm mới</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Basas Bumper Gum EXT NE - Low Top</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Offwhite/Gum</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">650.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style=" text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/nike2.jfif" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Nike Air Force 1 '07 QS
+                                                    <br>
+                                                    Cream II/Sail/Black/Black
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Sản phẩm mới</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Nike Air Force 1 '07 QS</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Cream II/Sail/Black/Black</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">3.829.000 VND</h5>
+                                </section>
+                            </div>                        
+                        <!-- </div>
+                    </section> -->
+                    <!-- <section class="section">
+                        <div class="row pt-5" style="width: 100%;"> -->
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/nike3.jfif" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Cream II/Sail/Black/Black
+                                                    <br>
+                                                    Black/Grey Fog/Sail/Chile Red
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Chỉ bán online</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Cream II/Sail/Black/Black</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Black/Grey Fog/Sail/Chile Red</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">2.929.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/bitis1.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Biti's Hunter X Midnight EZ-STRAP DSMH07600DEN 
+                                                    <br>
+                                                    Black
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Sản phẩm mới</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Biti's Hunter X Midnight EZ-STRAP DSMH07600DEN </h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Black</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">1.159.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/nike7.jfif" alt="img">
+                                            </div>
+                                            <div class="info" style="visibility: visible; opacity: 1;">
+                                                <h3 class="text-warning">HẾT HÀNG</h3>
+                                                <p>Zoom Freak 3
+                                                    <br>
+                                                    Black/Wolf Grey/Pink Blast/Metallic
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Bán chạy nhất</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Zoom Freak 3</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Black/Wolf Grey/Pink Blast/Metallic</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">3.669.000 VND</h5>
+                                </section>
+                            </div>                        
+                        <!-- </div>
+                    </section> -->
+                    <!-- <section class="section">
+                        <div class="row pt-5" style="width: 100%;"> -->
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/shoe11.jfif" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Nike Air Max 95
+                                                    <br>
+                                                    Midnight Navy/Sail/Armoury Navy/White
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Phiên bản giới hạn</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Nike Air Max 95</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Midnight Navy/Sail/Armoury Navy/White</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">8.799.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/shoe12.jpg" alt="img">
+                                            </div>
+                                            <div class="info" style="visibility: visible; opacity: 1;">
+                                                <h3 class="text-warning">HẾT HÀNG</h3>
+                                                <p>Nike Air Zoom Alphafly
+                                                    <br>
+                                                    White/Jade Aura/Flash Crimson
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Phiên bản giới hạn</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Nike Air Zoom Alphafly</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">White/Jade Aura/Flash Crimson</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">8.059.000 VND</h5>
+                                </section>
+                            </div>
+                            <div class="col-sm-6 pt-5 productCard" style="text-align: center;">
+                                <!-- normal -->
+                                <section class="section">
+                                    <div class="ih-item square effect13 tmp" style="height: fit-content; width: fit-content;">
+                                        <a href="#">
+                                            <div class="img" style="width: 100%">
+                                                <img src="./assets/images/bitis2.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="text-warning">MUA NGAY</h3>
+                                                <p>Biti's Hunter Street x VietMax | Bloomin' Central DSMH08400NAU
+                                                    <br>
+                                                    Brown
+                                                </p>
+                                            </div>  
+                                        </a>
+                                    </div>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: coral;">Sản phẩm mới</h5>
+                                    <div >
+                                        <div>
+                                            <button class="btn btnHearth">
+                                                <i class="loveCard far fa-heart active" style="transform: scale(3); color: orangered;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px dashed rgb(255, 171, 61);"></hr>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">Biti's Hunter Street x VietMax | Bloomin' Central DSMH08400NAU</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal;">Brown</h5>
+                                    <h5 class="fs-3" style="margin-top: 18px; font-weight: normal; color: black; font-weight: 700;">1.699.000 VND</h5>
+                                </section>
+                            </div>                        
+                        </div>
+                    <!-- </section> -->
+                </div>
+            </div>
+    
+        <div id="_footer">
+            <div class="_footer__menu-container">
+                <div class="_footer__column">
+                    <span class="_footer__title">Tiện ích</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Đăng nhập</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tra cứu đơn hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tìm cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Về chúng tôi</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách mua hàng</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Chính sách bảo hành</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Trợ giúp</span>
+                    <ul class="_footer__list">
+                        <li class="_footer__item"><a href="#" class="_footer__link">Câu hỏi thường gặp</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Email góp ý</a></li>
+                        <li class="_footer__item"><a href="#" class="_footer__link">Hotline</a></li>
+                    </ul>
+                </div>
+                <div class="_footer__column">
+                    <span class="_footer__title">Mạng xã hội</span>
+                    <div class="_footer__social">
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-facebook-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-instagram-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-twitter-square"></i>
+                        </a>
+                        <a href="#" class="_footer__social-link">
+                            <i class="_footer__social-icon fab fa-youtube-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="_footer__copyright">
+                <p>Copyright © 2021 Team 14 GTNM. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Login -->
+    <div class="_modal-login">
+        <div class="_modal__login-container">
+            <button class="_modal__close" onclick="hideLoginModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG NHẬP</p>
+            </div>
+            <div class="_modal__body">
+                <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                <button class="_modal__button" onclick="hideLoginModal()">
+                    ĐĂNG NHẬP
+                </button>
+                <a href="#" class="_modal__link">Quên mật khẩu</a>
+            </div>
+            <div class="_login-with">
+                <div class="_login-with__title">ĐĂNG NHẬP VỚI</div>
+                <div class="_login-with__item" onclick="hideLoginModal()">
+                    <i  class="fab fa-facebook-f _login-with__icon"></i>
+                    Facebook
+                </div>
+                <div style="right: 0;" class="_login-with__item" onclick="hideLoginModal()">
+                    <i class="fab fa-google _login-with__icon"></i>
+                    Google
+                </div>
+            </div>
+            <div class="_modal__suggestion">
+                Bạn chưa có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="registerNow()">Đăng ký ngay</a>
+            </div>
+        </div>
+    </div>
+    <!-- Register -->
+    <div class="_modal-register">
+        <div class="_modal__register-container">
+            <button class="_modal__close" onclick="hideRegisterModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="_modal__header">
+                <p class="_modal__header-title">ĐĂNG KÝ</p>
+                <div class="_modal__body">
+                    <input class="_modal__input" type="text" placeholder="Email / Số điện thoại / Tên đăng nhập" style="margin-top: 0;">
+                    <input class="_modal__input" type="password" placeholder="Mật khẩu">
+                    <input class="_modal__input" type="password" placeholder="Nhập lại mật khẩu">
+                    <div class="_modal__name-fields">
+                        <input class="_modal__name-input" type="text" placeholder="Họ">
+                        <input class="_modal__name-input" type="text" placeholder="Tên">
+                    </div>
+                    <div class="_modal__gender-section">
+                        <div>
+                            <input type="radio" id="_modal__gender-male" name="_modal__gender">
+                            <label for="_modal__gender-male">Nam</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="_modal__gender-female" name="_modal__gender">
+                            <label for="_modal__gender-female">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="_modal__term">
+                        <input type="checkbox">
+                        Tôi đã đọc và đồng ý với <a href="#">các điều khoản</a> 
+                    </div>
+                    <button class="_modal__button" onclick="hideRegisterModal()">
+                        ĐĂNG KÝ
+                    </button>
+                    <div class="_modal__suggestion">
+                        Bạn đã có tài khoản ? <a href="#" class="_modal__link-suggestion" onclick="loginNow()">Đăng nhập ngay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu
+        $(document).ready(function () {
+        // append plus symbol to every list item that has children
+        $('#_mobile-nav ._mobile-nav__parent').append('<span class="_open-menu fa fa-plus"></span>');
+        
+        // fix non-scrolling overflow issue on mobile devices
+        $('#_mobile-nav > ul').wrap('<div class="_overflow"></div>');
+        $(window).on('load resize', function () {
+            var vph = $(window).height() - 57; // 57px - height of #mobile-nav
+            $('._overflow').css('max-height', vph);
+        });
+    
+        // global variables
+        var menu = $('._overflow > ul');
+        var bg = $('html, body');
+        
+        // toggle background scrolling
+        function bgScrolling() {
+            // if menu has toggled class... *
+            if (menu.hasClass('_open')) {
+                // * disable background scrolling
+                bg.css({
+                    'overflow-y': 'hidden',
+                    'height': 'auto'
+                });
+            // if menu does not have toggled class... *
+            } else {
+                // * enable background scrolling
+                bg.css({
+                    'overflow-y': 'visible',
+                    'height': '100%'
+                });
+            }
+        }
+    
+        // menu button click events
+        $('._mobile-nav__menu-button').on('click', function (e) {
+            e.preventDefault();
+            // activate toggles
+            menu.slideToggle(250);
+            menu.toggleClass('_open');
+            $(this).children().toggleClass('fa-bars fa-times');
+            bgScrolling();
+        });
+    
+        // list item click events
+        $('._open-menu').on('click', function (e) {
+            e.preventDefault();
+            $(this).prev('ul').slideToggle(250);
+            $(this).toggleClass('rotate');
+        });
+        });
+        // Search click event
+        function searchToggle(obj, evt) {
+            const container = $(obj).closest('._search');
+            const menu = document.querySelector('._navbar__list');
+            const searchBox = document.querySelector('._search__input');
+
+            if (!container.hasClass('_active')) {
+                container.addClass('_active');
+                evt.preventDefault();
+                menu.style.display = 'none';
+                searchBox.focus();
+            } else 
+            if (container.hasClass('_active') && $(obj).closest('._search__input-holder').length == 0){
+                container.removeClass('_active');
+                // clear input
+                container.find('._search__input').val('');
+                menu.style.display = 'flex';
+            }     
+        }   
+        // Slider event
+        var slideIndex = 0;
+        const slides = document.getElementsByClassName("_slider__slide");
+
+        nextSlide();
+
+        function nextSlide() {
+            slideIndex += 1;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            showSlides(slideIndex);
+            setTimeout(nextSlide, 4000);
+        }
+
+        function showSlides(n) {
+            var i;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }          
+            slides[slideIndex-1].style.display = "block";
+        }
+        // Modals
+        const loginModal =  document.querySelector("._modal-login");
+        const registerModal = document.querySelector("._modal-register");
+
+        const loginModalContainer = document.querySelector("._modal__login-container");
+        const registerModalContainer = document.querySelector("._modal__register-container");
+        
+        function showLoginModal() {
+            loginModal.classList.add('_open-modal');
+        }
+
+        function hideLoginModal() {
+            loginModal.classList.remove('_open-modal');
+        }
+
+        function showRegisterModal() {
+            registerModal.classList.add('_open-modal');
+        }
+
+        function hideRegisterModal() {
+            registerModal.classList.remove('_open-modal');
+        }
+
+        function registerNow() {
+            hideLoginModal();
+            showRegisterModal();
+        }
+
+        function loginNow() {
+            hideRegisterModal();
+            showLoginModal();
+        }
+
+        // Hide modal whenever click outside
+
+        loginModal.addEventListener('click', hideLoginModal);
+        loginModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+        registerModal.addEventListener('click', hideRegisterModal);
+        registerModalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();    
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        // $(document).ready(function () {
+        //     var checkElements = document.getElementsByClassName('checkbox__type');
+        //     for ( i = 0; i < checkElements.length; i++)
+        //     {
+        //         // console.log(checkElements[i].getAttribute('id'));
+        //         $('#' + checkElements[i].id.toString()).on('click' , (event)=>{
+        //             console.log(event.target.id);
+        //             if (event.target.hasAttribute('checked') == false)
+        //             {
+        //                 // event.targe.css('color', 'black');
+        //                 $("#" + event.target.id.toString() + "_label").css("font-size", "5px");
+        //                 console.log($('#' + event.target.id.toString()  + '_label') === null)
+        //             }
+        //         });
+        //     }
+        // });
+        let elementChecks = document.getElementsByClassName('checkbox__type');
+        for (let i = 0; i < elementChecks.length; i++)
+        {
+            elementChecks[i].addEventListener('click', ()=>{
+                let elementLabel = document.getElementById(elementChecks[i].getAttribute("id") + '_label');
+                if (elementChecks[i].classList.contains('checked'))
+                {
+                    elementChecks[i].classList.remove('checked');
+                    let element = document.getElementById(elementChecks[i].id + '_label');
+                    element.style.fontWeight = 'normal';
+                }
+                else
+                {
+                    elementChecks[i].classList.add('checked');
+                    let element = document.getElementById(elementChecks[i].id + '_label');
+                    element.style.fontWeight = '500';
+                    console.log(elementChecks[i].getAttribute("id") + '_label');
+
+                }
+            });
+        }
+        
+    </script>
+
+    <script>
+        var slideUp = {
+            distance: '150%',
+            origin: 'bottom',
+            opacity: 0,
+            scale: 0.85,
+            reset: false
+        };
+        window.sr = ScrollReveal();
+        sr.reveal(document.querySelectorAll('section'), slideUp);
+        sr.reveal('section');
+        $(document).ready(function(){
+        $(window).on("load scroll resize", function(){
+            $('productCard').scrollzip({
+                showFunction    :   function() {
+                                        // alert('Element has come into the view.');
+                                    },//optional
+                hideFunction    :   function() {
+                                        // alert('Element has gone out of the view.');
+                                    },//optional
+                wholeVisible    :     true,//optional (default false)
+                showShift       :     100,//optional (default 0)
+                hideShift       :     100,//optional (default 0)
+            });
+        });
+    });
+
+    </script>
+
+    <script type="text/javascript">
+        var btnFilter = document.getElementById("btnFilter");
+        var count = 0;
+        btnFilter.addEventListener("click", function (param) {  
+            console.log("btnFilter đã click");
+            if (document.getElementById("frameFilter").style.display == "none" || count == 0)
+            {
+                document.getElementById("frameFilter").style.display = "block";
+                document.getElementById("listProduct").style.paddingTop = "85%";
+                count++;
+            }
+            else
+            {
+                document.getElementById("listProduct").style.paddingTop = "5%";
+                document.getElementById("frameFilter").style.display = "none";
+            }
+        })
+
+        window.addEventListener("resize", function (param) {  
+            window.location.reload();
+        })
+
+        var classBtnCheck = document.getElementsByClassName("btn-check");
+        for (let i = 0; i < classBtnCheck.length; i++)
+        {
+            classBtnCheck[i].addEventListener("change", function (param) {  
+                Swal.fire({
+                   timer: 700,
+                   width: "100px",
+                   background: "#000",
+                });
+                Swal.showLoading();
+            })
+        }
+    </script>
+    
+    <script type="text/javascript">
+        function beforeReload() {  
+            Swal.fire({
+                timer: 700,
+                width: "100px",
+                background: "#000",
+                });
+            Swal.showLoading();
+    }
+  </script>
+
+<script type='text/javascript'>
+    // <![CDATA[
+        var btnHearths = document.getElementsByClassName("loveCard");
+        for (let i = 0; i < btnHearths.length; i++)
+        {
+            btnHearths[i].addEventListener("click", function (param) {  
+                if (btnHearths[i].classList.contains("far"))
+                {
+                    btnHearths[i].classList.replace("far", "fas");
+                }
+                else
+                {
+                    btnHearths[i].classList.replace("fas", "far");
+                }
+            })
+        }
+        !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+    // /]]>
+</script>
+
+</body>
+</html>
