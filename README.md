@@ -15,4 +15,3 @@ Hệ thống bán giày mà chúng toi đang phát triển sẽ giúp bạn *r�
 ## Thông tin thêm
   - **Giảng viên hướng dẫn:** Ths. *Mai Trọng Khang*
   - Khoa Công nghệ Phần mềm - Trường Đại học Công nghệ Thông tin (ĐHQG - TPHCM)
-"# shoeSelling" 
