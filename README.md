@@ -2,7 +2,7 @@
 
 ## [ 👉 Truy cập hệ thống](https://hphudev.github.io/shoeSelling/)
 ## [ 👉 Figma](https://www.figma.com/file/N7o0c2QoJnQ4f9Q4hdMFpx/Figma_GiaoTiepNguoiMay)
-## [ 👉 Bảng phân công nhiệm vụ](https://trello.com/b/vCWGv1aQ/d%E1%BB%B1-%C3%A1n-website-b%C3%A1n-gi%C3%A0y-giao-ti%E1%BA%BFp-ng%C6%B0%E1%BB%9Di-m%C3%A1y)
+## [ 👉 Bảng phân công nhiệm vụ](https://trello.com/giaotipngimaydanwebsitebangiay/home)
 ## Giới thiệu
 Hệ thống bán giày mà chúng toi đang phát triển sẽ giúp bạn *rất* nhiều trong việc quản bá thương hiệu của chính mình. Với giao diện được đội ngũ chúng tôi thiết kế chu đáo, chi tiết và đặc biệt dựa theo các tiêu chuẩn quốc tế. Ngoài giao diện, các tính năng mà chúng tôi tích hợp cho bạn sẽ luôn là công cụ tích cực hỗ trợ bạn trong suốt quá trình kinh doanh cũng như quảng bá thương hiệu.
 
